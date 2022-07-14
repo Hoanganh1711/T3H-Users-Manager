@@ -1,25 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import 'antd/dist/antd.css';
+import './index.css';
+import { Route, Routes } from 'react-router-dom';
+import { Layout } from 'antd';
+import React, { useState } from 'react';
+import Sidebar from './Sidebar';
+import Users from './components/Users';
+const { Header, Content, Footer} = Layout;
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Layout style={{ minHeight: '100vh' }}>
+        <Sidebar />
+        <Layout className="site-layout">
+          <Header />
+          <Content style={{ margin: '0 16px' }}>
+            <div className="site-layout-background" style={{ padding: 24, minHeight: 360 }}>
+
+              <Routes>
+                <Route path="/Users" element={<Users />} />
+              </Routes>
+
+            </div>
+          </Content>
+          <Footer style={{ textAlign: 'center' }}>
+            Metaway Hoding ©2018 Created by Ant UED
+          </Footer>
+        </Layout>
+      </Layout>
+    </>
   );
-}
+};
 
 export default App;
