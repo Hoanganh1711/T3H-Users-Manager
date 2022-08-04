@@ -1,6 +1,8 @@
 /* eslint-disable jsx-a11y/alt-text */
 import {
     TeamOutlined,
+    HomeOutlined,
+    OrderedListOutlined
 } from '@ant-design/icons';
 import 'antd/dist/antd.css';
 import {Layout, Menu } from 'antd';
@@ -21,10 +23,22 @@ const Sidebar = () => {
 
     const items = [
         {
+            key: "Home",
+            icon: <HomeOutlined />,
+            title: "Home",
+            link: "#"
+        },
+        {
             key: "Users",
             icon: <TeamOutlined />,
             title: "Users",
-            link: "./Users"
+            link: "./UserList"
+        },
+        {
+            key: "TodoList",
+            icon: <OrderedListOutlined />,
+            title: "Todo List",
+            link: "./TodoList"
         },
         // {
         //     key: "UserInfo",

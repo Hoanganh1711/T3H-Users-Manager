@@ -7,9 +7,9 @@ import {
   selectLastName,
   selectEmail,
   selectAvatar
-} from ".././features/counter/counterSlice";
+} from "../../features/counter/counterSlice";
 
-function UserInfo() {
+const UserInfo = () => {
 
   const firstname = useSelector(selectFirstName);
   const lastname = useSelector(selectLastName);
